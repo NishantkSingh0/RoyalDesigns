@@ -90,22 +90,11 @@ export default function Login() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          {/* <motion.div
-            initial={{ scale: 0.7, rotate: -10 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{
-              delay: 0.2,
-              type: "spring",
-              stiffness: 220,
-            }}
-            className="inline-flex h-20 w-20 items-center justify-center mb-4"
-          > */}
            <img
               src="/logo.png"
               alt="Logo"
               className="inline-flex h-24 w-24 items-center justify-center mb-2 object-contain"
             />
-          {/* </motion.div> */}
 
           <h1 className="text-2xl font-bold text-gray-900">
             Royal Designs
@@ -220,15 +209,11 @@ export default function Login() {
 
             <motion.button
               variants={item}
-              whileHover={{
-                scale: 1.02,
-              }}
-              whileTap={{
-                scale: 0.97,
-              }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
               type="submit"
               disabled={isSubmitting}
-              className="btn-primary w-full py-2.5"
+              className="btn-primary w-full py-2.5 flex items-center justify-center"
             >
               {isSubmitting ? (
                 <Spinner size="sm" />

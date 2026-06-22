@@ -71,18 +71,32 @@ export default function AdminDashboard() {
           {tasks.slice(0, 5).length === 0 ? (
             <p className="text-sm text-gray-400 py-4 text-center">No tasks yet</p>
           ) : (
-            <ul className="space-y-3">
-              {tasks.slice(0, 5).map((t) => (
-                <li key={t.id} className="flex items-start justify-between gap-2">
+            <ul>
+              {tasks.slice(0, 5).map((t, index) => (
+                <li
+                  key={t.id}
+                  className={`flex items-start justify-between gap-2 py-3 ${
+                    index !== Math.min(tasks.length, 5) - 1
+                      ? "border-b border-gray-200 mb-2"
+                      : ""
+                  }`}
+                >
                   <div className="min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate">{t.title}</p>
+                    <p className="text-sm font-medium text-gray-900 truncate">
+                      {t.title}
+                    </p>
                     <p className="text-xs text-gray-500 mt-0.5">
                       {t.assigned_to_name ?? "Unassigned"} · {fmtDate(t.due_date)}
                     </p>
                   </div>
+
                   <div className="flex gap-1.5 shrink-0">
-                    <span className={statusColors[t.status]}>{t.status.replace("_", " ")}</span>
-                    <span className={priorityColors[t.priority]}>{t.priority}</span>
+                    <span className={statusColors[t.status]}>
+                      {t.status.replace("_", " ")}
+                    </span>
+                    <span className={priorityColors[t.priority]}>
+                      {t.priority}
+                    </span>
                   </div>
                 </li>
               ))}

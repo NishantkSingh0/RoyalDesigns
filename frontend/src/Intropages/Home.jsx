@@ -72,13 +72,15 @@ export default function Home() {
             feels exceptional, and speaks the language of your brand.
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.1, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <button onClick={() => navigate('/collections')} className="btn-gold px-8 py-4 text-sm tracking-[0.2em] uppercase font-sans">
+            <button onClick={() => navigate("/collections")} className="px-8 py-4 text-sm tracking-[0.2em] uppercase font-sans bg-white text-black rounded-lg hover:bg-gray-100 transition-colors duration-300">
               Explore Collections
             </button>
-            <button onClick={() => navigate('/contact')} className="btn-outline-gold px-8 py-4 text-sm tracking-[0.2em] uppercase font-sans">
+            <button onClick={() => navigate("/contact")} className="px-8 py-4 text-sm tracking-[0.2em] uppercase font-sans border border-white text-white rounded-lg hover:bg-white hover:text-black transition-all duration-300">
               Start a Conversation
             </button>
           </motion.div>

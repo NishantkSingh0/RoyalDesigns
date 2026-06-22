@@ -81,13 +81,9 @@ class AttendanceOverviewView(APIView):
         for emp in employees:
             attendance = {}
             for d in all_dates:
-                dow = d.weekday()
-                if dow == 6:
-                    attendance[str(d)] = "weekend"
-                else:
-                    attendance[str(d)] = (
-                        "present" if (emp.id, d) in report_set else "absent"
-                    )
+                attendance[str(d)] = (
+                    "present" if (emp.id, d) in report_set else "absent"
+                )
             result.append({
                 "employee_id": str(emp.id),
                 "employee_name": emp.full_name,
@@ -129,10 +125,7 @@ class AttendanceDetailView(APIView):
 
         attendance = {}
         for d in all_dates:
-            dow = d.weekday()
-            if dow == 6:
-                attendance[str(d)] = {"status": "weekend"}
-            elif d in report_map:
+            if d in report_map:
                 attendance[str(d)] = {
                     "status": "present",
                     "report_id": str(report_map[d]["id"]),
