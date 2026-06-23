@@ -9,19 +9,10 @@ from rest_framework_simplejwt.exceptions import TokenError
 
 from .models import User
 from .permissions import IsAdmin
-from .serializers import (
-    UserSerializer,
-    UserCreateSerializer,
-    LoginSerializer,
-    TokenResponseSerializer,
-    PasswordChangeSerializer,
-    PasswordResetRequestSerializer,
-    PasswordResetConfirmSerializer,
-)
+from .serializers import (UserSerializer, UserCreateSerializer, LoginSerializer, TokenResponseSerializer, PasswordChangeSerializer, PasswordResetRequestSerializer, PasswordResetConfirmSerializer)
 
 
 # ── Auth Views ────────────────────────────────────────────────────────────────
-
 class LoginView(APIView):
     permission_classes = [AllowAny]
 
