@@ -40,12 +40,12 @@ export function Sidebar() {
 
   return (
     <aside
-      className="group sticky top-0 h-screen w-18 hover:w-64 bg-gray-900 text-white transition-all duration-300 ease-in-out overflow-hidden flex flex-col shrink-0"
+      className="group sticky top-0 h-screen w-10 sm:w-18 hover:w-44 sm:hover:w-64 bg-gray-900 text-white transition-all duration-300 ease-in-out overflow-hidden flex flex-col shrink-0"
     >
       {/* Logo */}
-      <div className="border-b-2 border-amber-400 mx-4 pt-5 pb-2">
+      <div className="border-b-2 border-amber-400 mx-1 sm:mx-4 pt-5 pb-2">
         <div className="flex items-center">
-          <div className="h-10 w-10 flex items-center justify-center shrink-0">
+          <div className="h-8 w-8 sm:h-10 sm:w-10 flex items-center justify-center shrink-0">
             <img
               src="/logo.png"
               alt="Logo"
@@ -62,13 +62,13 @@ export function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 overflow-y-auto px-2 py-4 space-y-1">
+      <nav className="flex-1 overflow-y-auto px-0 sm:px-2 py-4 space-y-1">
         {nav.map(({ to, label, icon: Icon }) => (
           <NavLink
             key={to}
             to={to}
             className={({ isActive }) =>
-              `flex items-center rounded-lg px-4 py-2 transition-all duration-200  ${
+              `flex items-center rounded-lg px-2 sm:px-4 py-2 transition-all duration-200  ${
                 isActive
                   ? "bg-brand-600 text-white"
                   : "text-gray-400 hover:bg-gray-800 hover:text-white"
@@ -87,15 +87,15 @@ export function Sidebar() {
       </nav>
 
       {/* User Footer */}
-      <div className="border-t border-gray-800 p-2 mb-4 group/profile">
+      <div className="border-t border-gray-800 p-0 sm:p-2 mb-4 group/profile">
         {/* Profile */}
         <NavLink
           to={role === "admin" ? "/admin/profile" : "/profile"}
           className="flex items-center rounded-lg px-2 py-2 hover:bg-gray-800 transition-all"
         >
-          <Avatar name={user?.full_name} src={user?.avatar} size="sm" />
+          <Avatar name={user?.full_name} src={user?.avatar} size="responsive"/>
 
-          <div className="ml-3 overflow-hidden whitespace-nowrap max-w-0 opacity-0 transition-all duration-300 group-hover:max-w-[180px] group-hover:opacity-100">
+          <div className="ml-3 overflow-hidden whitespace-nowrap max-w-0 opacity-0 transition-all duration-300 group-hover:max-w-45 group-hover:opacity-100">
             <p className="text-sm font-medium text-white truncate">
               {user?.full_name}
             </p>
@@ -113,7 +113,7 @@ export function Sidebar() {
           >
             <ArrowRightOnRectangleIcon className="h-5 w-5 shrink-0" />
 
-            <span className="ml-3 overflow-hidden whitespace-nowrap max-w-0 opacity-0 transition-all duration-300 group-hover:max-w-[180px] group-hover:opacity-100">
+            <span className="ml-3 overflow-hidden whitespace-nowrap max-w-0 opacity-0 transition-all duration-300 group-hover:max-w-45 group-hover:opacity-100">
               Sign out
             </span>
           </button>

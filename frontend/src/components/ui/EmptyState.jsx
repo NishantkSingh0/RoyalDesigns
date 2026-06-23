@@ -1,6 +1,6 @@
 export function EmptyState({ icon: Icon, title, description, action }) {
   return (
-    <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
+    <div className="flex mt-40 flex-col items-center justify-center py-16 px-4 text-center">
       {Icon && (
         <div className="mb-4 rounded-full bg-gray-100 p-4">
           <Icon className="h-8 w-8 text-gray-400" aria-hidden="true" />

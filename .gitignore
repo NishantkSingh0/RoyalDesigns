@@ -18,6 +18,7 @@ frontend/.env.local
 .DS_Store
 Thumbs.db
 *.env
+*management/
 
 # IDE
 .vscode/

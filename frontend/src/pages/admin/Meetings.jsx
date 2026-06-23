@@ -99,7 +99,7 @@ export default function Meetings() {
       {isLoading ? (
         <div className="flex justify-center py-16"><Spinner size="lg" /></div>
       ) : meetings.length === 0 ? (
-        <EmptyState icon={VideoCameraIcon} title="No meetings yet" description="Generate a Google Meet link for your next client call." action={<button onClick={() => setCreateOpen(true)} className="btn-primary inline-flex items-center gap-2"><PlusIcon className="h-4 w-4" /> Generate Meeting</button>} />
+        <EmptyState icon={VideoCameraIcon} title="No meetings yet" description="Generate a Google Meet link for your next client call." action={<button onClick={() => setCreateOpen(true)} className="hidden btn-primary sm:inline-flex items-center gap-2"><PlusIcon className="h-4 w-4" /> Generate Meeting</button>} />
       ) : (
         <div className="card overflow-hidden">
           <table className="w-full text-sm">

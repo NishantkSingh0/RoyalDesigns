@@ -7,6 +7,9 @@ export function Avatar({ name = "", src, size = "md", className = "" }) {
     md: "h-10 w-10 text-sm",
     lg: "h-12 w-12 text-base",
     xl: "h-16 w-16 text-lg",
+
+    // Mobile xs, Desktop sm
+    responsive: "h-7 w-7 text-xs sm:h-8 sm:w-8 sm:text-sm",
   };
 
   const colors = [

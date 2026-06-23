@@ -47,15 +47,15 @@ export default function Projects() {
   return (
     <div className="space-y-4">
       <div className="flex justify-end">
-        <button onClick={() => setCreateOpen(true)} className="btn-primary inline-flex items-center gap-2">
+        <button onClick={() => setCreateOpen(true)} className=" btn-primary inline-flex items-center gap-2">
           <PlusIcon className="h-4 w-4" /> New Project
         </button>
       </div>
 
       {isLoading ? (
-        <div className="flex justify-center py-16"><Spinner size="lg" /></div>
+        <div className="flex justify-centerpy-16"><Spinner size="lg" /></div>
       ) : projects.length === 0 ? (
-        <EmptyState icon={FolderIcon} title="No projects yet" description="Create your first project." action={<button onClick={() => setCreateOpen(true)} className="btn-primary"><PlusIcon className="h-4 w-4" /> New Project</button>} />
+        <EmptyState icon={FolderIcon} title="No projects yet" description="Create your first project." action={<button onClick={() => setCreateOpen(true)} className="hidden btn-primary md:inline-flex items-center gap-2"><PlusIcon className="h-4 w-4" /> New Project</button>} />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {projects.map((p) => (

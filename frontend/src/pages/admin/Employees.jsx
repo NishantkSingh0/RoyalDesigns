@@ -2,12 +2,7 @@ import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import {
-  PlusIcon,
-  MagnifyingGlassIcon,
-  TrashIcon,
-  EyeIcon,
-} from "@heroicons/react/24/outline";
+import { PlusIcon, MagnifyingGlassIcon, TrashIcon, EyeIcon } from "@heroicons/react/24/outline";
 import { listUsers, createUser, deleteUser, updateUser } from "../../api/users";
 import { Modal } from "../../components/ui/Modal";
 import { Avatar } from "../../components/ui/Avatar";
@@ -97,7 +92,7 @@ export default function Employees() {
             title="No employees yet"
             description="Add your first freelancer to get started."
             action={
-              <button onClick={() => setCreateOpen(true)} className="btn-primary inline-flex items-center gap-2">
+              <button onClick={() => setCreateOpen(true)} className="hidden btn-primary sm:inline-flex items-center gap-2">
                 <PlusIcon className="h-4 w-4" /> Add Employee
               </button>
             }
